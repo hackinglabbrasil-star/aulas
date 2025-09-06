@@ -58,3 +58,32 @@ if __name__ == "__main__":
     """Roda um cadastro simples"""
     cadastro = criar_usuario()
     login(cadastro)
+
+
+"""
+Manual rápido - Kali Linux: Rockyou e John the Ripper
+
+1 Descompactar a rockyou.txt:
+   # Navegue até a pasta
+   cd /usr/share/wordlists/
+   # Descompacta o arquivo
+   sudo gzip -d rockyou.txt.gz
+   # Verifica se descompactou
+   ls -l rockyou.txt
+
+2 Criar um arquivo com a hash:
+   # Substitua 'abc123...' pela sua hash
+   echo abc123... > hash.txt
+   # Verifica o conteúdo
+   cat hash.txt
+
+3 Usar o John the Ripper para quebrar a hash:
+   john --format=raw-sha256 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+
+   - --format=raw-sha256 : define o tipo da hash
+   - --wordlist=...       : aponta para a lista de senhas (rockyou.txt)
+   - hash.txt             : arquivo com a hash a ser quebrada
+
+4 Ver a senha encontrada:
+   john --show hash.txt
+"""
